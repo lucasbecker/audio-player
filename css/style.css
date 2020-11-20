@@ -95,13 +95,31 @@ h4 {
 }
 
 .card-content h5{
-  margin-top: 1.6rem;
+  margin-top: 2.4rem;
   font-size: 1.8rem;
+}
+
+.card-content .details {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.card-content .details .more {
+  color: var(--color-text-dark);
+  transition: 0.5s;
+}
+.card-content .details .more:hover {
+  color: var(--color-headings);
 }
 
 .card-content p,
 .card-content p i{
   font-size: 1.6rem;
+}
+
+.card-content i {
+  transform: translateY(0.2rem);
 }
 
 audio {

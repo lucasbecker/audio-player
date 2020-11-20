@@ -2,7 +2,7 @@ import audios from './data.js';
 import element from './playerElements.js';
 import { secondsToMinutes } from './utils.js';
 
-const player = {
+export default {
   listData: audios,
   currentData: {},
   currentCount: 0,
@@ -61,6 +61,7 @@ const player = {
     this.cover.style.background = `url('${this.currentData.cover}') no-repeat center center / cover`;
     this.title.innerText = this.currentData.title;
     this.artist.innerHTML = `<i class='material-icons'>keyboard_voice</i> ${this.currentData.artist}`;
+    this.moreDetails.href = this.currentData.url;
     element.createAudioElement.call(this, this.currentData.file);
     
     this.audio.onloadeddata = () => {
@@ -73,10 +74,26 @@ const player = {
     this.update();
     this.play();
   },
+  handleNext() {
+    this.currentCount++;
+    if(this.currentCount === this.listData.length) this.restart();
+    this.audio.pause();
+    this.seekBar.value = 0;
+    this.setSeek(this.seekBar.value);
+    this.update();
+    if(this.isPlaying) this.play();
+  },
+  handlePrevious(){
+    this.currentCount--;
+    if(this.currentCount === -1) this.currentCount = this.listData.length -1;
+    this.audio.pause();
+    this.seekBar.value = 0;
+    this.setSeek(this.seekBar.value);
+    this.update();
+    if(this.isPlaying) this.play();
+  },
   restart() {
     this.currentCount = 0;
     this.update();
   }
 }
-
-window.addEventListener('load', player.start());

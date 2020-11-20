@@ -4,8 +4,11 @@ export default {
   set() {
   this.cover = document.querySelector('.card-image');
   this.title =document.querySelector('.card-content h5');
-  this.artist = document.querySelector('.card-content p');
+  this.artist = document.querySelector('.card-content .details .artist');
+  this.moreDetails = document.querySelector('.card-content .details .more');
   this.playPause = document.querySelector('#play-pause');
+  this.nextBtn = document.querySelector('#next');
+  this.previousBtn = document. querySelector('#previous');
   this.vol = document.querySelector('#vol');
   this.volControl = document.querySelector('#vol-control');
   this.seekBar = document.querySelector('#seekbar');
@@ -19,6 +22,8 @@ export default {
     this.audio.onended = () => this.next();
     this.audio.ontimeupdate = () => this.timeUpdate();
     this.playPause.onclick = () => this.togglePlayPause();
+    this.nextBtn.onclick = () => this.handleNext();
+    this.previousBtn.onclick = () => this.handlePrevious();
     this.vol.onclick = () => this.toggleMute();
     this.volControl.oninput = () => this.setVolume(this.volControl.value);
     this.volControl.onchange = () => this.setVolume(this.volControl.value);
