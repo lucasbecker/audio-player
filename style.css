@@ -1,0 +1,147 @@
+@import "https://cdnjs.cloudflare.com/ajax/libs/material-design-icons/3.0.1/iconfont/material-icons.min.css";
+@import "https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css";
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root{
+  --bg: #fcfcfc;
+  --bg-dark: #333333;
+  
+  --bg-panel: #ebebeb;
+  --bg-panel-dark: #434343;
+  
+  --color-headings: #0077ff;
+  --color-headings-dark: #3664FF;
+  
+  --color-text: #333333;
+  --color-text-dark: #B5B5B5;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body{
+  min-height: 100vh;
+  width: 100%;
+  
+  background-color: var(--bg-dark);
+  
+  font-family: "Montserrat", sans-serif;
+  color: var(--color-text-dark);
+  font-size: 1.4rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#player {
+  width: 80%;
+  max-width: 500px;
+  background-color: var(--bg-panel-dark);
+  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.15);
+
+  border-radius: 0.8rem;
+  overflow: hidden;
+}
+
+.card {
+  box-shadow: none;
+  margin: 0;
+  border-radius: 0.8rem;
+}
+
+h4 {
+  color: var(--color-headings-dark);
+  font-size: 2.0rem;
+  font-weight: bold;
+  margin: 0;
+  padding: 1.6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-image {
+  background: url('https://placehold.it/500') no-repeat center center / cover;
+  height: 200px;
+
+  position: relative;
+}
+
+.some-controls{
+  position: absolute;
+  bottom: -3rem;
+  
+  width: 100%;
+  padding: 0 2.4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+
+.card-content {
+  background-color: var(--bg-panel-dark);
+  border-radius: 0.8rem;
+}
+
+.card-content h5{
+  margin-top: 1.6rem;
+  font-size: 1.8rem;
+}
+
+.card-content p,
+.card-content p i{
+  font-size: 1.6rem;
+}
+
+audio {
+  width: 100%;
+  margin-top: 3.2rem;
+  outline: none;
+}
+
+#play-pause, #previous, #next {
+  background-color: var(--color-headings-dark);
+  font-size: 2rem;
+}
+
+#custom-control {
+  margin-top: 3.2rem;
+}
+
+#vol{
+  transform: translateY(0.2rem);
+  color: var(--color-headings-dark);
+}
+
+input[type="range"]{
+  border: none;
+}
+input[type="range"]::-webkit-slider-runnable-track{
+  background-color: var(--bg-dark);
+}
+input[type="range"]::-moz-range-track{
+  background-color: var(--bg-dark);
+}
+input[type="range"]::-ms-track{
+  background-color: var(--bg-dark);
+}
+input[type="range"]::-webkit-slider-thumb{
+  background-color: var(--color-headings-dark);
+}
+input[type="range"]::-moz-range-thumb{
+  background-color: var(--color-headings-dark);
+}
+input[type="range"]::-ms-thumb{
+  background-color: var(--color-headings-dark);
+}
